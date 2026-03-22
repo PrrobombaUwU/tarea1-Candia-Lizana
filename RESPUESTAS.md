@@ -17,12 +17,18 @@ El MAKEFILE tiene la utilidad de ser una herramienta que facilita las tareas de 
 
 
 ##3
+
+
 Tanto git como github proporcionas herramientas para el desarrollo colaborativo para miembros de algun grupo, sea se de 2 o mas personas, como que todo lo hecho quedara guardado en la nube, la posibilidad de trabajar de manera asincronica y entre otras.
 
 
 ##4
+
+
 Claro que es util documentar las funciones porque asi cualquiera que desee operar el codigo puede entender los objetivos y resultados de cada funcion. En caso de no ser documentado, lleva a malos resultados, ya que si alguien ajeno trata de ejecutar el codigo, puede que pierda tiempo tratando de entender el codigo, tenga que adivinar las funciones y solo el/los autor/es sabran como funciona debidamente.
 
 
 ##5
+
+
 Para el proyecto es un beneficio tener las cuatro herramientas mencionadas, ya que estas se complementan. El juntar estas, lleva a que usuarios que desconocen el codigo puedan saber que hace, como compilarlo sin complicaciones, entender y usar el codigo y en caso de presentar algun problema pueden reportarlo, asi pues trayendo beneficios para él y al creador del codigo.
