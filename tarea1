@@ -1,1 +1,49 @@
+#include <iostream>
+#include <fstream>
+#include <string>
 
+using namespace std;
+
+class arregloextensible {
+private:
+    int* B;
+    unsigned long n;
+    unsigned long capacidad;
+
+    unsigned long potenciadedos(unsigned long x) {
+        if (x == 0) return 0;
+        unsigned long pot = 1;
+        while (pot < x) {
+            pot *= 2;
+        }
+        return pot;
+    }
+
+public:
+    arregloextensible(){
+        n = 0;
+        capacidad = 0;
+        B = nullptr;
+    }
+
+    arregloextensible(unsigned long ent, int v = 0, bool initialize = false) {
+        n = ent;
+        if (n == 0) {
+            capacidad = 0;
+            B = nullptr;
+        } else {
+            capacidad = potenciadedos(n);
+            B = new int[capacidad];
+            if (initialize) {
+                for (unsigned long i = 0; i < n; ++i) {
+                    B[i] = v;
+                }
+            }
+        }
+    }
+
+    ~arregloextensible() {
+        if (B != nullptr) {
+            delete[] B;
+        }
+    }
