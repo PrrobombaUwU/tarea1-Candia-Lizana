@@ -26,7 +26,7 @@ public:
         B = nullptr;
     }
 
-    arregloextensible(unsigned long ent, int v = 0, bool initialize = false) {
+    arregloextensible(unsigned long ent, int v = 0, bool iniciada = false) {
         n = ent;
         if (n == 0) {
             capacidad = 0;
@@ -34,7 +34,7 @@ public:
         } else {
             capacidad = potenciadedos(n);
             B = new int[capacidad];
-            if (initialize) {
+            if (iniciada) {
                 for (unsigned long i = 0; i < n; ++i) {
                     B[i] = v;
                 }
