@@ -9,6 +9,7 @@ private:
 int* A;
 int* B;
 int tamanioA;
+int capacidadB;
 
 public:
 
@@ -34,17 +35,39 @@ if (0 <= i && i < tamanioA){
 }
 
 void arr_extensible::append(int v){
-    int tamanioB = 1;
-    
-    while(tamanioB<=tamanioA){
-        tamanioB = tamanioB*2;
+
+int* Bcopia;
+
+   if(tamanioA<capacidadB){
+    B[tamanioA] = v;
+    tamanioA++;
+   }else{
+    int nuevacapacidadB = 1;
+    while(nuevacapacidadB<=tamanioA){
+        nuevacapacidadB = nuevacapacidadB*2;
     };
 
-   for(int i=0; i<=tamanioA; i++){
-        B[i] = A[i];
-   };
+    Bcopia = new int [capacidadB];
+    
+    for(int i=0; i<capacidadB;i++){
+        Bcopia[i] = B[i];
+    };
+    
+    delete[] B;
+    B = new int [nuevacapacidadB];
 
+    for(int i=0; i<tamanioA;i++){
+        B[i] = Bcopia[i];   
+    };
+
+    B[tamanioA] = v;
+    tamanioA++;
+    capacidadB = nuevacapacidadB;
+    delete[] Bcopia;
+   };
 }
+
+    
 
 unsigned long arr_extensible::size(){
     return tamanioA;
